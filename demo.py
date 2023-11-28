@@ -58,7 +58,7 @@ def semantic_search(search_query):
     for i in range(len(results.get('distances')[0])):
         final_results[results.get('documents')[0][i]] = results.get('distances')[0][i]
     
-    final_results_by_score = sorted(final_results.items(), key=lambda x:x[1], reverse=True)
+    final_results_by_score = sorted(final_results.items(), key=lambda x:x[1])
     return {key[0]: key[1] for key in final_results_by_score}
     # return final_results
 
